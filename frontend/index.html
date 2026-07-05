@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Stage Vault — plays worth reading</title>
+  <meta name="description" content="Track the plays you have read, discover monologues and scenes, and find your next script. Free for theatre people.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='26' font-size='26'>🎭</text></svg>">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0e0c0a;color:#f4f3ef;min-height:100vh}
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;background:radial-gradient(ellipse at 50% 0%,#1e1a14 0%,#0e0c0a 70%)}
+    .mark{font-size:48px;margin-bottom:24px}
+    h1{font-size:clamp(32px,6vw,64px);font-weight:500;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px;color:#f4f3ef}
+    h1 span{color:#c9a96e}
+    .sub{font-size:clamp(16px,2.5vw,20px);color:#a09d97;line-height:1.7;max-width:520px;margin:0 auto 40px}
+    .cta{display:inline-block;padding:14px 32px;background:#c9a96e;color:#0e0c0a;border-radius:8px;font-size:15px;font-weight:500;text-decoration:none;transition:background 0.15s}
+    .cta:hover{background:#dbb97e}
+    .sub-cta{font-size:13px;color:#6b6860;margin-top:12px}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:900px;margin:80px auto 0;padding:0 20px}
+    .feat{background:#1a1714;border:0.5px solid #2e2b25;border-radius:12px;padding:24px}
+    .feat-icon{font-size:24px;margin-bottom:12px}
+    .feat h3{font-size:15px;font-weight:500;color:#f4f3ef;margin-bottom:8px}
+    .feat p{font-size:13px;color:#6b6860;line-height:1.7}
+    .plays-preview{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:60px auto 0;max-width:800px;padding:0 20px}
+    .play-pill{background:#1a1714;border:0.5px solid #2e2b25;border-radius:20px;padding:8px 16px;font-size:12px;color:#a09d97}
+    footer{text-align:center;padding:40px 20px;font-size:12px;color:#3a3730}
+    @media(max-width:600px){.features{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="mark">🎭</div>
+    <h1>Your plays.<br><span>Your stage vault.</span></h1>
+    <p class="sub">Track every play you have read, discover monologues and scenes, and find your next script. Free for theatre people, forever.</p>
+    <a href="app.html" class="cta">Start exploring</a>
+    <p class="sub-cta">No account needed to get started</p>
+
+    <div class="features">
+      <div class="feat">
+        <div class="feat-icon">📚</div>
+        <h3>Your shelf</h3>
+        <p>Mark plays as Read, Currently Reading, or Want to Read. Your shelf lives on your device, no login required.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🎤</div>
+        <h3>Monologues and scenes</h3>
+        <p>Browse audition material filtered by character gender, type, and cast mix. Direct links to buy or find the script.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🔍</div>
+        <h3>Deep search</h3>
+        <p>Search by title, playwright, character name, theme, cast size, era, or gender breakdown. Find exactly what you need.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-icon">🃏</div>
+        <h3>Theatre card</h3>
+        <p>Generate a shareable image of your reading life. Post it to Instagram, drop it in a Discord bio, or send it to a director.</p>
+      </div>
+    </div>
+
+    <div class="plays-preview">
+      <span class="play-pill">Angels in America</span>
+      <span class="play-pill">A Raisin in the Sun</span>
+      <span class="play-pill">Waiting for Godot</span>
+      <span class="play-pill">Hamlet</span>
+      <span class="play-pill">A Streetcar Named Desire</span>
+      <span class="play-pill">The Importance of Being Earnest</span>
+      <span class="play-pill">Topdog/Underdog</span>
+      <span class="play-pill">Cloud Nine</span>
+      <span class="play-pill">The Cherry Orchard</span>
+      <span class="play-pill">Hedda Gabler</span>
+      <span class="play-pill">4.48 Psychosis</span>
+      <span class="play-pill">+ 40 more</span>
+    </div>
+  </div>
+  <footer>My Stage Vault &middot; Free for theatre people &middot; scriptshelf.com</footer>
+</body>
+</html>
