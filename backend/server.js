@@ -43,4 +43,5 @@ app.put('/api/notes/:id/:key(*)', (req, res) => {
   res.json({ ok: true });
 });
 
-app.listen(process.env.PORT || 3001, () => console.log('running'));
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, '0.0.0.0', () => console.log('running on ' + PORT));
