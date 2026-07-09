@@ -8,80 +8,135 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:14px;background:#f7f5f0;color:#1a1916;height:100vh;overflow:hidden}
 #app{display:flex;height:100vh;overflow:hidden}
-.sb{width:180px;background:#fff;border-right:1px solid #e4e1da;display:flex;flex-direction:column;flex-shrink:0}
+
+/* Sidebar */
+.sb{width:190px;background:#fff;border-right:1px solid #e4e1da;display:flex;flex-direction:column;flex-shrink:0}
 .logo{padding:16px 12px 12px;border-bottom:1px solid #e4e1da}
-.logo-n{font-size:15px;font-weight:500}
-.logo-t{font-size:10px;color:#a09d97;margin-top:1px}
-nav{padding:8px 6px}
-.ni{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:7px;font-size:12px;color:#6b6860;margin-bottom:2px;cursor:pointer;user-select:none}
+.logo-n{font-size:15px;font-weight:500;color:#1a1916}
+nav{padding:8px 6px;flex:1}
+.ni{display:flex;align-items:center;gap:8px;padding:7px 9px;border-radius:7px;font-size:12px;color:#6b6860;margin-bottom:2px;cursor:pointer;user-select:none;transition:background 0.1s}
 .ni:hover,.ni.on{background:#f7f5f0;color:#1a1916;font-weight:500}
+.ni-icon{font-size:15px;width:16px;text-align:center}
+.nav-section{font-size:9px;text-transform:uppercase;letter-spacing:0.06em;color:#a09d97;padding:8px 9px 4px;margin-top:4px}
+
+/* Main */
 .main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
 .topbar{background:#fff;border-bottom:1px solid #e4e1da;padding:10px 13px;display:flex;gap:8px;align-items:center;flex-shrink:0}
-.topbar input{flex:1;padding:7px 10px 7px 10px;border:1px solid #e4e1da;border-radius:7px;background:#f7f5f0;font-size:12px;color:#1a1916;outline:none;font-family:inherit}
-.tc-btn{padding:6px 12px;border:1px solid #e4e1da;border-radius:7px;font-size:11px;background:#fff;color:#6b6860;cursor:pointer;white-space:nowrap;font-family:inherit}
-.cnt{flex:1;overflow-y:auto;padding:14px 12px}
-.ph{font-size:14px;font-weight:500;color:#1a1916;margin-bottom:12px}
-.cards{display:flex;flex-wrap:wrap;gap:10px}
-.pc{width:140px;flex-shrink:0;background:#fff;border:1px solid #e4e1da;border-radius:10px;padding:10px;cursor:pointer;position:relative}
+.topbar input{flex:1;padding:7px 10px;border:1px solid #e4e1da;border-radius:7px;background:#f7f5f0;font-size:12px;color:#1a1916;outline:none;font-family:inherit}
+.topbar input:focus{border-color:#ccc9c0}
+.tc-btn{padding:6px 11px;border:1px solid #e4e1da;border-radius:7px;font-size:11px;background:#fff;color:#6b6860;cursor:pointer;white-space:nowrap;font-family:inherit;flex-shrink:0}
+.cnt{flex:1;overflow-y:auto;padding:16px 14px}
+
+/* Section headers */
+.ph{font-size:15px;font-weight:500;color:#1a1916;margin-bottom:4px}
+.psub{font-size:11px;color:#a09d97;margin-bottom:14px}
+.rc{font-size:11px;color:#a09d97;margin:6px 0 12px}
+
+/* Play cards */
+.cards{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:8px}
+.pc{width:138px;flex-shrink:0;background:#fff;border:1px solid #e4e1da;border-radius:10px;padding:10px;cursor:pointer;position:relative;transition:border-color 0.15s}
 .pc:hover{border-color:#ccc9c0}
-.cov{width:120px;height:168px;border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;font-style:italic;color:rgba(255,255,255,.92);margin-bottom:8px}
+.cov{width:118px;height:165px;border-radius:6px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;font-style:italic;color:rgba(255,255,255,.92);margin-bottom:8px}
 .cov img{width:100%;height:100%;object-fit:cover;display:block}
-.ctitle{font-size:11px;font-weight:500;line-height:1.3;margin-bottom:2px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.ctitle{font-size:11px;font-weight:500;line-height:1.3;margin-bottom:2px;color:#1a1916;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .cauth{font-size:10px;color:#a09d97}
 .cmeta{display:flex;align-items:center;justify-content:space-between;margin-top:5px}
 .cgenre{font-size:9px;padding:1px 5px;border-radius:20px;background:#f7f5f0;color:#6b6860;border:1px solid #e4e1da}
 .sbtns{display:flex;gap:3px;margin-top:8px}
-.sab{flex:1;padding:5px 1px;border-radius:5px;font-size:9px;font-weight:500;cursor:pointer;border:1px solid #e4e1da;background:transparent;color:#6b6860;font-family:inherit}
+.sab{flex:1;padding:5px 1px;border-radius:5px;font-size:9px;font-weight:500;border:1px solid #e4e1da;background:transparent;color:#6b6860;cursor:pointer;font-family:inherit;transition:all 0.1s}
 .sab.sr{background:#e1f5ee;color:#0a5e47;border-color:#4dba95}
 .sab.sg{background:#e6f1fb;color:#154f8a;border-color:#6ba8e3}
 .sab.sw{background:#fdf0f5;color:#8c2150;border-color:#d4537e}
-.rib{position:absolute;top:7px;left:7px;padding:2px 6px;border-radius:20px;font-size:9px;font-weight:500;pointer-events:none}
+.rib{position:absolute;top:7px;left:7px;padding:2px 6px;border-radius:20px;font-size:9px;font-weight:500;pointer-events:none;z-index:2}
 .rib.rr{background:#e1f5ee;color:#0a5e47;border:1px solid #4dba95}
 .rib.rg{background:#e6f1fb;color:#154f8a;border:1px solid #6ba8e3}
 .rib.rw{background:#fdf0f5;color:#8c2150;border:1px solid #d4537e}
+
+/* Filters */
+.fgroup{margin-bottom:12px}
+.flbl{font-size:10px;color:#a09d97;text-transform:uppercase;letter-spacing:.04em;margin-bottom:5px}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{padding:3px 9px;border:1px solid #e4e1da;border-radius:20px;font-size:11px;background:#fff;color:#6b6860;cursor:pointer;font-family:inherit;transition:all 0.1s}
+.chip.on{background:#1a1916;color:#fff;border-color:#1a1916}
+
+/* Shelf tabs */
 .stabs{display:flex;border:1px solid #e4e1da;border-radius:7px;overflow:hidden;margin-bottom:14px;background:#fff}
-.stab{flex:1;padding:7px 4px;font-size:11px;color:#6b6860;text-align:center;border-right:1px solid #e4e1da;background:transparent;cursor:pointer;border-top:none;border-bottom:none;border-left:none;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:4px}
+.stab{flex:1;padding:7px 3px;font-size:11px;color:#6b6860;text-align:center;border-right:1px solid #e4e1da;background:transparent;cursor:pointer;border-top:none;border-bottom:none;border-left:none;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:4px;transition:all 0.1s}
 .stab:last-child{border-right:none}
 .stab.on{background:#f7f5f0;color:#1a1916;font-weight:500}
-.dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.chips{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:10px}
-.chip{padding:3px 9px;border:1px solid #e4e1da;border-radius:20px;font-size:11px;background:#fff;color:#6b6860;cursor:pointer;font-family:inherit}
-.chip.on{background:#1a1916;color:#fff;border-color:#1a1916}
-.flbl{font-size:10px;color:#a09d97;text-transform:uppercase;letter-spacing:.04em;margin:9px 0 5px}
-.mc{background:#fff;border:1px solid #e4e1da;border-radius:10px;padding:12px;margin-bottom:8px;cursor:pointer}
+.tdot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+
+/* Monologue/scene cards */
+.mc{background:#fff;border:1px solid #e4e1da;border-radius:10px;padding:13px;margin-bottom:8px;cursor:pointer;transition:border-color 0.15s}
 .mc:hover{border-color:#ccc9c0}
-.mctop{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:3px}
-.gdot{width:7px;height:7px;border-radius:50%;display:inline-block;flex-shrink:0}
-.empty{text-align:center;padding:48px;color:#a09d97;font-size:12px;line-height:1.8}
+.mc-top{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+.gdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;display:inline-block}
+.gf{background:#d4537e}.gm{background:#378add}.gnb{background:#639922}
+.mc-char{font-size:12px;font-weight:500;color:#1a1916}
+.mc-play{font-size:11px;color:#a09d97}
+.mc-desc{font-size:11px;color:#6b6860;line-height:1.6;margin-top:4px}
+.mc-badge{font-size:9px;padding:2px 6px;border-radius:20px;background:#f7f5f0;color:#6b6860;border:1px solid #e4e1da;white-space:nowrap;margin-left:auto}
+.mc-meta{font-size:10px;color:#a09d97;margin:3px 0 5px}
+.get-script{display:flex;flex-wrap:wrap;gap:4px;margin-top:9px;align-items:center}
+.sl{padding:3px 7px;border:1px solid #e4e1da;border-radius:20px;font-size:10px;color:#6b6860;text-decoration:none;background:#fff;transition:all 0.1s}
+.sl:hover{border-color:#ccc9c0;color:#1a1916}
+.ex-box{margin-top:9px;padding:9px 11px;background:#f7f5f0;border-left:2px solid #ccc9c0;border-radius:0 5px 5px 0}
+.ex-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.05em;color:#a09d97;margin-bottom:3px}
+.ex-txt{font-size:11px;font-style:italic;white-space:pre-wrap;line-height:1.8;color:#1a1916}
+.ex-src{font-size:10px;color:#a09d97;margin-top:3px}
+
+/* Callout box */
+.callout{background:#fff;border:1px solid #e4e1da;border-radius:10px;padding:14px 16px;margin-bottom:16px;display:flex;gap:12px;align-items:flex-start}
+.callout-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+.callout-title{font-size:13px;font-weight:500;color:#1a1916;margin-bottom:3px}
+.callout-text{font-size:11px;color:#6b6860;line-height:1.6}
+.callout-note{font-size:10px;color:#a09d97;margin-top:4px;font-style:italic}
+
+/* Theme badge */
+.theme-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:#1a1916;color:#fff;border-radius:20px;font-size:11px;font-weight:500;margin-bottom:10px}
+
+/* Detail panel */
 .ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.2);z-index:99}
-.dp{position:fixed;top:0;right:0;width:380px;height:100%;background:#fff;border-left:1px solid #e4e1da;overflow-y:auto;z-index:100;transform:translateX(100%);transition:transform .25s}
+.dp{position:fixed;top:0;right:0;width:390px;height:100%;background:#fff;border-left:1px solid #e4e1da;overflow-y:auto;z-index:100;transform:translateX(100%);transition:transform .25s cubic-bezier(.19,1,.22,1)}
 .dp.open{transform:translateX(0)}
-.dph{display:flex;align-items:center;justify-content:space-between;padding:12px 15px;border-bottom:1px solid #e4e1da;position:sticky;top:0;background:#fff;z-index:1}
+.dph{display:flex;align-items:center;justify-content:space-between;padding:13px 15px;border-bottom:1px solid #e4e1da;position:sticky;top:0;background:#fff;z-index:1}
+.dph-title{font-size:12px;font-weight:500;color:#1a1916}
 .dpb{padding:15px}
-.sub{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:#a09d97;margin:14px 0 7px}
-.srow{display:flex;gap:6px}
-.sopt{flex:1;padding:8px 3px;border:1px solid #e4e1da;border-radius:7px;font-size:10px;font-weight:500;background:transparent;color:#6b6860;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit}
+.dp-cov{width:90px;aspect-ratio:2/3;border-radius:7px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:500;font-style:italic;color:rgba(255,255,255,.92);margin-bottom:12px}
+.dp-cov img{width:100%;height:100%;object-fit:cover}
+.dp-title{font-size:17px;font-weight:500;margin-bottom:2px;color:#1a1916}
+.dp-auth{font-size:12px;color:#a09d97;margin-bottom:9px}
+.dp-tags{display:flex;flex-wrap:wrap;gap:3px;margin-bottom:10px}
+.dp-desc{font-size:12px;color:#6b6860;line-height:1.7;margin-bottom:4px}
+.dp-sub{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.05em;color:#a09d97;margin:14px 0 7px}
+.srow{display:flex;gap:5px}
+.sopt{flex:1;padding:8px 3px;border:1px solid #e4e1da;border-radius:7px;font-size:10px;font-weight:500;background:transparent;color:#6b6860;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;font-family:inherit;transition:all 0.12s}
 .sopt:hover{background:#f7f5f0}
 .sopt.ar{background:#e1f5ee;color:#0a5e47;border-color:#4dba95;border-width:1.5px}
 .sopt.ag{background:#e6f1fb;color:#154f8a;border-color:#6ba8e3;border-width:1.5px}
 .sopt.aw{background:#fdf0f5;color:#8c2150;border-color:#d4537e;border-width:1.5px}
-.rst{font-size:20px;cursor:pointer;color:#e4e1da;user-select:none}
+.rst{font-size:20px;cursor:pointer;color:#e4e1da;user-select:none;transition:color 0.1s}
 .rst.on{color:#f59e0b}
-textarea{width:100%;padding:8px;border:1px solid #e4e1da;border-radius:6px;font-size:12px;background:#f7f5f0;color:#1a1916;resize:vertical;min-height:60px;outline:none;font-family:inherit}
-.sl{padding:3px 8px;border:1px solid #e4e1da;border-radius:20px;font-size:10px;color:#6b6860;text-decoration:none;display:inline-block;margin:2px}
-.sl:hover{border-color:#ccc9c0;color:#1a1916}
-.ri{display:flex;align-items:center;gap:7px;padding:7px;background:#f7f5f0;border-radius:6px;cursor:pointer;margin-bottom:5px}
+textarea{width:100%;padding:8px;border:1px solid #e4e1da;border-radius:6px;font-size:12px;background:#f7f5f0;color:#1a1916;resize:vertical;min-height:60px;outline:none;font-family:inherit;line-height:1.6}
+.savebtn{margin-top:6px;padding:5px 11px;border:1px solid #ccc9c0;border-radius:6px;font-size:11px;background:transparent;color:#1a1916;cursor:pointer;font-family:inherit}
+.ri{display:flex;align-items:center;gap:7px;padding:7px;background:#f7f5f0;border-radius:6px;cursor:pointer;margin-bottom:5px;transition:background 0.1s}
 .ri:hover{background:#e4e1da}
-.mbdg{margin-left:auto;font-size:9px;padding:1px 6px;border-radius:20px;background:#f7f5f0;color:#6b6860;border:1px solid #e4e1da;white-space:nowrap}
-.exbx{padding:8px 10px;background:#f7f5f0;border-left:2px solid #ccc9c0;margin:8px 0;border-radius:0 5px 5px 0}
+.mini{border:1px solid #e4e1da;border-radius:6px;padding:9px;margin-bottom:6px;background:#f7f5f0}
+.mini-top{display:flex;align-items:center;gap:5px;margin-bottom:3px;flex-wrap:wrap}
+.mini-desc{font-size:11px;color:#6b6860;line-height:1.5}
+
+/* Theatre card */
 .cm{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:center;justify-content:center;padding:20px}
 .cm.open{display:flex}
 .cmi{background:#fff;border-radius:12px;padding:22px;max-width:400px;width:100%}
-.tc{background:linear-gradient(135deg,#1a1714,#2d2620);border-radius:10px;padding:18px;color:#f4f3ef}
+.tc{background:linear-gradient(135deg,#1a1714,#2d2620);border-radius:10px;padding:18px;color:#f4f3ef;margin-bottom:14px}
+
+/* Empty */
+.empty{text-align:center;padding:48px 20px;color:#a09d97;font-size:12px;line-height:1.8}
+
+/* Toast */
 #toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%) translateY(10px);background:#1a1916;color:#fff;padding:7px 16px;border-radius:20px;font-size:12px;opacity:0;pointer-events:none;transition:all .2s;z-index:300;white-space:nowrap}
 #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.savebtn{margin-top:6px;padding:5px 11px;border:1px solid #ccc9c0;border-radius:6px;font-size:11px;background:transparent;color:#1a1916;cursor:pointer;font-family:inherit}
-.rc{font-size:11px;color:#a09d97;margin:6px 0 11px}
 </style>
 </head>
 <body>
@@ -92,8 +147,8 @@ textarea{width:100%;padding:8px;border:1px solid #e4e1da;border-radius:6px;font-
   </div>
   <div class="main">
     <div class="topbar">
-      <input type="search" id="srch" placeholder="Title, playwright, character, theme..." oninput="onSrch(this.value)">
-      <button class="tc-btn" onclick="showCard()">&#127183; Theatre card</button>
+      <input type="search" id="srch" placeholder="Search plays and playwrights..." oninput="onSrch(this.value)">
+      <button class="tc-btn" onclick="showCard()">&#127183; My card</button>
     </div>
     <div class="cnt" id="cnt"></div>
   </div>
@@ -156,10 +211,9 @@ var PLAYS=[
   {id:49,key:'OL2900172W',title:'The Humans',author:'Stephen Karam',year:2014,genre:'Drama',era:'2010s',cast:'medium',castSize:6,gender:'mixed',runtime:105,themes:['family','fear','America','class','health'],color:'#2C2C2A',cov:null,desc:"The Blake family gathers in a New York apartment for Thanksgiving. Underneath the warmth, everyone is terrified. Karam's Tony-winning play about modern American anxiety.",rids:[35,16,17],rwhy:['The American family as a container for national fear','Economic anxiety made domestic and personal','An ensemble where subtext is the entire text'],monos:[{ch:'Erik',g:'m',t:'Dramatic',d:"Erik's speeches about his nightmares and his fears. A man unable to protect his family, quiet and devastating."},{ch:'Brigid',g:'f',t:'Dramatic',d:"Brigid's defense of her life choices. The child explaining herself to parents who worry, painfully recognizable."}],scenes:[{ch:[{n:'Erik',g:'m'},{n:'Deirdre',g:'f'}],t:'Dramatic',d:"The parents alone. A marriage's quiet desperation, the most emotionally honest scenes in the play."}]},
   {id:50,key:'OL2900174W',title:'The Children',author:'Lucy Kirkwood',year:2016,genre:'Drama',era:'2010s',cast:'small',castSize:3,gender:'mixed',runtime:100,themes:['nuclear','responsibility','climate','aging','future'],color:'#3B6D11',cov:null,desc:"Two retired nuclear scientists are visited by a former colleague after a coastal disaster. Kirkwood's taut chamber play about what we owe the future.",rids:[39,48,30],rwhy:['Both ask what responsibility to the future actually means','The past returning to demand something','Science and conscience as inseparable'],monos:[{ch:'Rose',g:'f',t:'Dramatic',d:"Rose's speech explaining why she has come. A request that is actually a demand, contained, precise, and completely unsettling."},{ch:'Hazel',g:'f',t:'Dramatic',d:"Hazel's response to what Rose wants. A life defended against the claim of conscience."}],scenes:[{ch:[{n:'Robin',g:'m'},{n:'Rose',g:'f'}],t:'Dramatic',d:"The former lovers. What was between them and what Rose is asking for now, desire and duty entangled."},{ch:[{n:'Hazel',g:'f'},{n:'Rose',g:'f'}],t:'Dramatic',d:"The women together. The marriage and the request. Among the most precisely written scenes in recent British drama."}]}
 ];
-
-
+</script>
+<script>
 var API = 'https://mystagevault-production.up.railway.app';
-
 var DEVICE_ID = 'dev_local';
 try {
   var stored = localStorage.getItem('msv_id');
@@ -191,247 +245,458 @@ function loadFromBackend() {
     .catch(function(){ render(); });
 }
 
-var shelf={},ratings={},notes={},page='discover',stab='read',mg='All',mt='All',sg='All',q='',gf='All',ef='All',did=null;
-var GD={f:'#d4537e',m:'#378add',nb:'#639922'};
-var NAVS=[['discover','Discover'],['search','Search'],['shelf','My shelf'],['monologues','Monologues'],['scenes','Scenes']];
+// State
+var shelf={}, ratings={}, notes={}, page='discover', stab='read';
+var monoQ='', monoGender='All', monoType='All', monoEra='All', monoLen='All';
+var sceneQ='', sceneGender='All', sceneEra='All';
+var playQ='', playGenre='All', playEra='All';
+var olResults=[], olLoading=false;
+var did=null;
 
+// Color helpers
+var COLORS=['#533AB7','#0F6E56','#993C1D','#3A3A3A','#185FA5','#854F0B','#993556','#444441','#3C3489','#3B6D11','#5C1E1E','#2C2C2A'];
+function hc(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))&0xffffffff;return COLORS[Math.abs(h)%COLORS.length];}
 function ini(t){return(t||'').split(' ').filter(Boolean).map(function(w){return w[0];}).join('').slice(0,2).toUpperCase();}
 
+// Cover image
 function cov(p,w,h){
-  return '<div class="cov" style="width:'+w+'px;height:'+h+'px;background:'+p.color+'">'
-    +(p.cov?'<img src="https://covers.openlibrary.org/b/id/'+p.cov+'-M.jpg" onerror="this.style.display=\'none\'">':ini(p.title))
+  var c=p.color||hc(p.title||'');
+  var url=null;
+  if(p.cov) url='https://covers.openlibrary.org/b/id/'+p.cov+'-M.jpg';
+  else if(p.key) url='https://covers.openlibrary.org/b/olid/'+p.key+'-M.jpg';
+  return '<div class="cov" style="width:'+w+'px;height:'+h+'px;background:'+c+'">'
+    +(url?'<img src="'+url+'" onerror="this.style.display=\'none\'">':ini(p.title))
     +'</div>';
 }
 
+// Shelf buttons on cards
 function sbtns(id){
+  id=String(id);
   var s=shelf[id]||null;
   return '<div class="sbtns" onclick="event.stopPropagation()">'
-    +'<button class="sab'+(s==='read'?' sr':'')+'" onclick="tog('+id+',\'read\')">&#10003; Read</button>'
-    +'<button class="sab'+(s==='reading'?' sg':'')+'" onclick="tog('+id+',\'reading\')">Reading</button>'
-    +'<button class="sab'+(s==='want'?' sw':'')+'" onclick="tog('+id+',\'want\')">&#9829; Want</button>'
+    +'<button class="sab'+(s==='read'?' sr':'')+'" onclick="tog(\''+id+'\',\'read\')">&#10003; Read</button>'
+    +'<button class="sab'+(s==='reading'?' sg':'')+'" onclick="tog(\''+id+'\',\'reading\')">Reading</button>'
+    +'<button class="sab'+(s==='want'?' sw':'')+'" onclick="tog(\''+id+'\',\'want\')">&#9829; Want</button>'
     +'</div>';
 }
 
+// Play card
 function card(p){
-  var s=shelf[p.id]||null;
+  var pid=String(p.key||p.id);
+  var s=shelf[pid]||null;
+  var r=ratings[pid]||0;
   var rl={read:'&#10003; Read',reading:'Reading',want:'&#9829; Want'};
   var rc={read:'rr',reading:'rg',want:'rw'};
-  return '<div class="pc" onclick="odp('+p.id+')">'
+  return '<div class="pc" onclick="odp(\''+pid+'\')">'
     +(s?'<div class="rib '+rc[s]+'">'+rl[s]+'</div>':'')
-    +cov(p,120,168)
+    +cov(p,118,165)
     +'<div class="ctitle">'+p.title+'</div>'
     +'<div class="cauth">'+p.author+'</div>'
-    +'<div class="cmeta"><span style="font-size:10px;color:'+(ratings[p.id]?'#f59e0b':'#e4e1da')+'">&#9733;&#9733;&#9733;&#9733;&#9733;</span>'
+    +'<div class="cmeta">'
+    +'<span style="font-size:10px;color:'+(r?'#f59e0b':'#e4e1da')+'">&#9733;&#9733;&#9733;&#9733;&#9733;</span>'
     +'<span class="cgenre">'+p.genre+'</span></div>'
-    +sbtns(p.id)+'</div>';
+    +sbtns(pid)+'</div>';
 }
 
 function grid(plays){
-  return plays.length?'<div class="cards">'+plays.map(card).join('')+'</div>'
-    :'<div class="empty">&#128218; Nothing here yet.<br>Browse Discover to add plays.</div>';
+  return plays.length
+    ?'<div class="cards">'+plays.map(card).join('')+'</div>'
+    :'<div class="empty">&#128218; Nothing found.</div>';
 }
+
+// Gender dot
+function gdot(g){
+  var c={f:'#d4537e',m:'#378add',nb:'#639922'};
+  return '<span class="gdot g'+g+'" style="background:'+(c[g]||'#999')+'"></span>';
+}
+
+// Script links
+function scriptLinks(p){
+  var bq=encodeURIComponent((p.title||'')+' '+(p.author||''));
+  return '<div class="get-script">'
+    +'<span style="font-size:10px;color:#a09d97">Get the script:</span>'
+    +'<a class="sl" href="https://www.concordtheatricals.com/search#q='+bq+'" target="_blank">Concord</a>'
+    +'<a class="sl" href="https://www.dramatists.com" target="_blank">DPS</a>'
+    +'<a class="sl" href="https://www.worldcat.org/search?q='+bq+'&fq=dt:bks" target="_blank">Library</a>'
+    +'</div>';
+}
+
+// Navigation
+var NAVS=[
+  {id:'discover',icon:'&#127918;',label:'Discover'},
+  {id:'shelf',icon:'&#128218;',label:'My shelf'},
+  {id:'search',icon:'&#128269;',label:'Play search'},
+  {section:'Audition tools'},
+  {id:'monologues',icon:'&#127908;',label:'Monologue search'},
+  {id:'scenes',icon:'&#128101;',label:'Scene search'}
+];
 
 function renderNav(){
-  document.getElementById('nav').innerHTML=NAVS.map(function(n){
-    return '<div class="ni'+(page===n[0]?' on':'')+'" onclick="go(\''+n[0]+'\')">'+n[1]+'</div>';
-  }).join('');
+  var html='';
+  NAVS.forEach(function(n){
+    if(n.section){
+      html+='<div class="nav-section">'+n.section+'</div>';
+    } else {
+      html+='<div class="ni'+(page===n.id?' on':'')+'" onclick="go(\''+n.id+'\')">'
+        +'<span class="ni-icon">'+n.icon+'</span>'+n.label+'</div>';
+    }
+  });
+  document.getElementById('nav').innerHTML=html;
 }
 
-function chip(lbl,active,fn){
-  return '<button class="chip'+(active?' on':'')+'" onclick="'+fn+'">'+lbl+'</button>';
+function go(p){page=p;render();}
+
+// THEMES for featured rotation
+var THEMES=[
+  {name:'Plays by women',desc:'Playwrights who changed what theatre can say',filter:function(p){return ['Lorraine Hansberry','Caryl Churchill','Sarah Kane','Suzan-Lori Parks','Lynn Nottage','Paula Vogel','Sarah DeLappe','Lucy Kirkwood','Lucy Prebble','Anna Deavere Smith','Aphra Behn'].indexOf(p.author)>=0;}},
+  {name:'Two-handers',desc:'Plays for exactly two actors',filter:function(p){return p.cast==='small'&&p.castSize===2;}},
+  {name:'Solo shows',desc:'One performer carrying the whole stage',filter:function(p){return p.cast==='solo'||p.castSize===1;}},
+  {name:'Queer theatre',desc:'Plays centering queer experience and identity',filter:function(p){return (p.themes||[]).some(function(t){return t==='queerness'||t==='sexuality'||t==='gender'||t==='AIDS';});}},
+  {name:'American classics',desc:'The plays that defined American drama',filter:function(p){return ['Drama','Tragedy'].indexOf(p.genre)>=0&&['1940s','1950s','1960s','1970s','1980s','1990s','1900s'].indexOf(p.era)>=0&&['Tony Kushner','Lorraine Hansberry','Arthur Miller','Tennessee Williams','Suzan-Lori Parks','Edward Albee','Eugene O\'Neill','Sam Shepard'].indexOf(p.author)>=0;}},
+  {name:'British theatre',desc:'From Pinter to Kane -- the British tradition',filter:function(p){return ['Harold Pinter','Caryl Churchill','Sarah Kane','Tom Stoppard','Lucy Kirkwood','Lucy Prebble','Brian Friel','J.M. Synge','Oscar Wilde','George Bernard Shaw'].indexOf(p.author)>=0;}},
+  {name:'Classical roots',desc:'Shakespeare, the Greeks, and the canon',filter:function(p){return ['1600s','Ancient','Medieval','1500s'].indexOf(p.era)>=0||['William Shakespeare','Sophocles','Euripides','Aeschylus','Aristophanes','Moliere'].indexOf(p.author)>=0;}},
+  {name:'Plays about race',desc:'Theatre that confronts race and identity head-on',filter:function(p){return (p.themes||[]).indexOf('race')>=0;}},
+  {name:'Experimental and form-breaking',desc:'Plays that reinvented what theatre can be',filter:function(p){return ['Experimental','Absurdist'].indexOf(p.genre)>=0;}},
+  {name:'Great monologue plays',desc:'Essential scripts for actors building their book',filter:function(p){return (p.monos||[]).length>=2;}}
+];
+
+function getFeatured(){
+  var week=Math.floor(Date.now()/604800000);
+  var theme=THEMES[week%THEMES.length];
+  var matching=PLAYS.filter(theme.filter);
+  // if fewer than 6 matching, pad with others
+  if(matching.length<6){
+    var others=PLAYS.filter(function(p){return matching.indexOf(p)<0;});
+    var seed=week*7;
+    while(matching.length<Math.min(12,PLAYS.length)&&others.length>0){
+      seed=(seed*1664525+1013904223)&0xffffffff;
+      var idx=Math.abs(seed)%others.length;
+      matching.push(others[idx]);
+      others.splice(idx,1);
+    }
+  }
+  return {theme:theme,plays:matching.slice(0,12)};
 }
 
-function gdot(g){return '<span class="gdot" style="background:'+GD[g]+'"></span>';}
-
+// Pages
 function render(){
   renderNav();
   var el=document.getElementById('cnt');
-  if(page==='discover') el.innerHTML='<div class="ph">Featured plays</div><div style="font-size:11px;color:#a09d97;margin-bottom:12px">'+PLAYS.length+' plays in the vault</div>'+grid(PLAYS);
-  else if(page==='search') el.innerHTML=renderSearch();
+  if(page==='discover') el.innerHTML=renderDiscover();
   else if(page==='shelf') el.innerHTML=renderShelf();
-  else if(page==='monologues') el.innerHTML=renderMono();
+  else if(page==='search') el.innerHTML=renderSearch();
+  else if(page==='monologues') el.innerHTML=renderMonologues();
   else if(page==='scenes') el.innerHTML=renderScenes();
 }
 
-function filtered(){
-  var qq=q.toLowerCase();
-  return PLAYS.filter(function(p){
-    var mq=!qq||p.title.toLowerCase().indexOf(qq)>=0||p.author.toLowerCase().indexOf(qq)>=0||(p.themes||[]).join(' ').indexOf(qq)>=0||(p.monos||[]).some(function(m){return m.ch.toLowerCase().indexOf(qq)>=0;});
-    return mq&&(gf==='All'||p.genre===gf)&&(ef==='All'||p.era===ef);
-  });
-}
-
-function renderSearch(){
-  var gs=['All','Drama','Comedy','Tragedy','Absurdist','Experimental'];
-  var es=['All','1600s','1800s','1900s','1950s','1960s','1970s','1980s','1990s','2000s','2010s'];
-  var res=filtered();
-  return '<div class="ph">Search</div>'
-    +'<div class="flbl">Genre</div><div class="chips">'+gs.map(function(g){return chip(g,gf===g,'setGF(\''+g+'\')');}).join('')+'</div>'
-    +'<div class="flbl">Era</div><div class="chips">'+es.map(function(e){return chip(e,ef===e,'setEF(\''+e+'\')');}).join('')+'</div>'
-    +'<div class="rc">'+res.length+' play'+(res.length!==1?'s':'')+' found</div>'
-    +grid(res);
+function renderDiscover(){
+  var f=getFeatured();
+  return '<div class="theme-badge">&#10024; Featured: '+f.theme.name+'</div>'
+    +'<div class="psub">'+f.theme.desc+' -- updates weekly</div>'
+    +grid(f.plays)
+    +'<div class="ph" style="margin-top:24px">All plays in the vault</div>'
+    +'<div class="psub">'+PLAYS.length+' curated plays with full monologue and scene data</div>'
+    +grid(PLAYS);
 }
 
 function renderShelf(){
   var c={read:0,reading:0,want:0};
   Object.keys(shelf).forEach(function(k){if(c[shelf[k]]!==undefined)c[shelf[k]]++;});
-  var mine=PLAYS.filter(function(p){return shelf[p.id]===stab;});
+  var mine=PLAYS.filter(function(p){return shelf[String(p.key||p.id)]===stab;});
+  // also check OL plays
+  var olMine=olResults.filter(function(p){return shelf[String(p.key||p.id)]===stab;});
+  var allMine=mine.concat(olMine);
   function ts(t,dot,lbl){
     return '<button class="stab'+(stab===t?' on':'')+'" onclick="setST(\''+t+'\')">'
-      +'<span class="dot" style="background:'+dot+'"></span>'+lbl+(c[t]?' ('+c[t]+')':'')+'</button>';
+      +'<span class="tdot" style="background:'+dot+'"></span>'+lbl+(c[t]?' ('+c[t]+')':'')+'</button>';
   }
   return '<div class="ph">My shelf</div>'
     +'<div class="stabs">'+ts('read','#0a5e47','Read')+ts('reading','#154f8a','Reading')+ts('want','#8c2150','Want')+'</div>'
-    +(mine.length?grid(mine):'<div class="empty">Nothing yet. Hit Read, Reading, or Want on any card.</div>');
+    +(allMine.length?grid(allMine):'<div class="empty">Nothing yet. Use the Read, Reading, or Want buttons on any play card.</div>');
 }
 
-function renderMono(){
-  var gs=[['All','All genders'],['Female','Female'],['Male','Male'],['Non-binary','Non-binary']];
-  var ts=[['All','All types'],['Dramatic','Dramatic'],['Comedic','Comedic'],['Seriocomic','Seriocomic']];
-  var items=[];
-  PLAYS.forEach(function(p){(p.monos||[]).forEach(function(m){
-    var gm=m.g==='f'?'Female':m.g==='m'?'Male':'Non-binary';
-    if((mg==='All'||mg===gm)&&(mt==='All'||mt===m.t))items.push({p:p,m:m,gm:gm});
-  });});
-  var html='<div class="ph">Monologues</div>'
-    +'<div class="flbl">Character gender</div><div class="chips">'+gs.map(function(g){return chip(g[1],mg===g[0],'setMG(\''+g[0]+'\')');}).join('')+'</div>'
-    +'<div class="flbl">Type</div><div class="chips">'+ts.map(function(t){return chip(t[1],mt===t[0],'setMT(\''+t[0]+'\')');}).join('')+'</div>'
-    +'<div class="rc">'+items.length+' monologue'+(items.length!==1?'s':'')+'</div>';
-  items.forEach(function(it){
-    var p=it.p,m=it.m,bq=encodeURIComponent(p.title+' '+p.author);
-    html+='<div class="mc" onclick="odp('+p.id+')">'
-      +'<div class="mctop">'+gdot(m.g)+'<strong style="font-size:12px">'+m.ch+'</strong>'
-      +'<span style="font-size:11px;color:#a09d97">in '+p.title+'</span>'
-      +'<span class="mbdg">'+m.t+'</span></div>'
-      +'<div style="font-size:10px;color:#a09d97;margin-bottom:4px">'+it.gm+' &middot; '+p.author+'</div>'
-      +'<p style="font-size:11px;color:#6b6860;line-height:1.6;margin:0 0 8px">'+m.d+'</p>'
-      +(m.ex?'<div class="exbx"><div style="font-size:9px;text-transform:uppercase;color:#a09d97;margin-bottom:3px">Sample text</div><p style="font-size:11px;font-style:italic;white-space:pre-wrap;line-height:1.8;margin:0 0 3px">'+m.ex+'</p><p style="font-size:10px;color:#a09d97">'+m.exsrc+'</p></div>':'')
-      +'<div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center"><span style="font-size:10px;color:#a09d97">Get the script:</span>'
-      +'<a class="sl" href="https://www.concordtheatricals.com/search#q='+bq+'" target="_blank">Concord</a>'
-      +'<a class="sl" href="https://www.worldcat.org/search?q='+bq+'&fq=dt:bks" target="_blank">Library</a>'
-      +'</div></div>';
+function renderSearch(){
+  var genres=['All','Drama','Comedy','Tragedy','Absurdist','Experimental','Musical'];
+  var eras=['All','Ancient','1600s','1700s','1800s','1900s','1950s','1960s','1970s','1980s','1990s','2000s','2010s','2020s'];
+  var q=playQ.toLowerCase();
+  var localRes=PLAYS.filter(function(p){
+    var mq=!q||p.title.toLowerCase().indexOf(q)>=0||p.author.toLowerCase().indexOf(q)>=0||(p.themes||[]).join(' ').indexOf(q)>=0;
+    return mq&&(playGenre==='All'||p.genre===playGenre)&&(playEra==='All'||p.era===playEra);
   });
-  return html;
+  var showOL=olResults.length>0;
+  return '<div class="ph">Play search</div>'
+    +'<div class="callout"><div class="callout-icon">&#128218;</div>'
+    +'<div><div class="callout-title">Building your script book?</div>'
+    +'<div class="callout-text">Search any title or playwright to find plays beyond our curated vault.</div>'
+    +'<div class="callout-note">Monologue and scene data is only available for our '+PLAYS.length+' featured plays.</div></div></div>'
+    +'<div class="fgroup"><div class="flbl">Genre</div><div class="chips">'
+    +genres.map(function(g){return '<button class="chip'+(playGenre===g?' on':'')+'" data-fn="setPG" data-val="'+g+'">'+g+'</button>';}).join('')+'</div></div>'
+    +'<div class="fgroup"><div class="flbl">Era</div><div class="chips">'
+    +eras.map(function(e){return '<button class="chip'+(playEra===e?' on':'')+'" data-fn="setPE" data-val="'+e+'">'+e+'</button>';}).join('')+'</div></div>'
+    +'<div class="rc">'+(olLoading?'Searching Open Library...':(showOL?olResults.length+' results from Open Library':localRes.length+' plays in vault'))+'</div>'
+    +(olLoading?'<div class="empty">Searching...</div>':(showOL?grid(olResults):grid(localRes)));
 }
+
+
+function renderMonologues(){
+  var genders=[{v:'All',l:'All genders'},{v:'f',l:'Female'},{v:'m',l:'Male'},{v:'nb',l:'Non-binary'}];
+  var types=[{v:'All',l:'All types'},{v:'Dramatic',l:'Dramatic'},{v:'Comedic',l:'Comedic'},{v:'Seriocomic',l:'Seriocomic'},{v:'Tragic',l:'Tragic'}];
+  var eras=[{v:'All',l:'Any era'},{v:'classical',l:'Classical'},{v:'modern',l:'Modern'},{v:'contemporary',l:'Contemporary'}];
+  var items=getMonoItems();
+  return '<div class="ph">Monologue search</div>'
+    +'<div class="psub">Search '+countMonos()+' monologues across '+PLAYS.length+' plays.</div>'
+    +'<div class="fgroup"><div class="flbl">Search</div>'
+    +'<input type="search" id="mono-search-input" value="'+monoQ+'" oninput="setMQ(this.value)" placeholder="Character name, keyword, or theme..." style="width:100%;padding:7px 10px;border:1px solid #e4e1da;border-radius:7px;background:#f7f5f0;font-size:12px;color:#1a1916;outline:none;font-family:inherit;margin-bottom:5px"><div style="font-size:10px;color:#a09d97;margin-bottom:10px">Searches character names, descriptions, and themes across all curated plays</div></div>'
+    +'<div class="fgroup"><div class="flbl">Character gender</div><div class="chips">'
+    +genders.map(function(g){return '<button class="chip'+(monoGender===g.v?' on':'')+'" data-fn="setMG" data-val="'+g.v+'">'+g.l+'</button>';}).join('')+'</div></div>'
+    +'<div class="fgroup"><div class="flbl">Type</div><div class="chips">'
+    +types.map(function(t){return '<button class="chip'+(monoType===t.v?' on':'')+'" data-fn="setMT" data-val="'+t.v+'">'+t.l+'</button>';}).join('')+'</div></div>'
+    +'<div class="fgroup"><div class="flbl">Era</div><div class="chips">'
+    +eras.map(function(e){return '<button class="chip'+(monoEra===e.v?' on':'')+'" data-fn="setME" data-val="'+e.v+'">'+e.l+'</button>';}).join('')+'</div></div>'
+    +'<div id="mono-results"><div class="rc">'+items.length+' monologue'+(items.length!==1?'s':'')+' found</div>'
+    +items.map(monoCard).join('')+'</div>';
+}
+
 
 function renderScenes(){
-  var ms=[['All','All mixes'],['F/F','F/F'],['M/M','M/M'],['M/F','M/F'],['Mixed/3+','Mixed/3+']];
-  var items=[];
-  PLAYS.forEach(function(p){(p.scenes||[]).forEach(function(s){
-    var fs=s.ch.filter(function(c){return c.g==='f';}).length,ms2=s.ch.filter(function(c){return c.g==='m';}).length;
-    var mix='Mixed/3+';
-    if(s.ch.length===2){if(fs===2)mix='F/F';else if(ms2===2)mix='M/M';else if(fs===1&&ms2===1)mix='M/F';}
-    if(sg==='All'||sg===mix)items.push({p:p,s:s,mix:mix});
-  });});
-  var html='<div class="ph">Scenes</div>'
-    +'<div class="flbl">Cast mix</div><div class="chips">'+ms.map(function(m){return chip(m[1],sg===m[0],'setSG(\''+m[0]+'\')');}).join('')+'</div>'
-    +'<div class="rc">'+items.length+' scene'+(items.length!==1?'s':'')+'</div>';
-  items.forEach(function(it){
-    var p=it.p,s=it.s,bq=encodeURIComponent(p.title+' '+p.author);
-    html+='<div class="mc" onclick="odp('+p.id+')">'
-      +'<div class="mctop">'
-      +s.ch.map(function(c){return gdot(c.g)+'<strong style="font-size:11px">'+c.n+'</strong>';}).join('<span style="color:#a09d97;margin:0 2px">&middot;</span>')
-      +'<span class="mbdg">'+s.t+'</span><span class="mbdg">'+it.mix+'</span></div>'
-      +'<div style="font-size:10px;color:#a09d97;margin-bottom:4px">from <strong>'+p.title+'</strong></div>'
-      +'<p style="font-size:11px;color:#6b6860;line-height:1.6;margin:0 0 8px">'+s.d+'</p>'
-      +'<div style="display:flex;flex-wrap:wrap;gap:4px;align-items:center"><span style="font-size:10px;color:#a09d97">Get the script:</span>'
-      +'<a class="sl" href="https://www.concordtheatricals.com/search#q='+bq+'" target="_blank">Concord</a>'
-      +'<a class="sl" href="https://www.worldcat.org/search?q='+bq+'&fq=dt:bks" target="_blank">Library</a>'
-      +'</div></div>';
-  });
-  return html;
+  var mixes=[{v:'All',l:'Any mix'},{v:'F/F',l:'F/F'},{v:'M/M',l:'M/M'},{v:'M/F',l:'M/F'},{v:'Mixed/3+',l:'Mixed/3+'}];
+  var eras=[{v:'All',l:'Any era'},{v:'classical',l:'Classical'},{v:'modern',l:'Modern'},{v:'contemporary',l:'Contemporary'}];
+  var items=getSceneItems();
+  return '<div class="ph">Scene search</div>'
+    +'<div class="psub">Search '+countScenes()+' scenes across '+PLAYS.length+' plays.</div>'
+    +'<div class="fgroup"><div class="flbl">Search</div>'
+    +'<input type="search" id="scene-search-input" value="'+sceneQ+'" oninput="setSQ(this.value)" placeholder="Character name, keyword, or theme..." style="width:100%;padding:7px 10px;border:1px solid #e4e1da;border-radius:7px;background:#f7f5f0;font-size:12px;color:#1a1916;outline:none;font-family:inherit;margin-bottom:5px"><div style="font-size:10px;color:#a09d97;margin-bottom:10px">Searches character names, descriptions, and themes across all curated plays</div></div>'
+    +'<div class="fgroup"><div class="flbl">Cast mix</div><div class="chips">'
+    +mixes.map(function(m){return '<button class="chip'+(sceneGender===m.v?' on':'')+'" data-fn="setSG" data-val="'+m.v+'">'+m.l+'</button>';}).join('')+'</div></div>'
+    +'<div class="fgroup"><div class="flbl">Era</div><div class="chips">'
+    +eras.map(function(e){return '<button class="chip'+(sceneEra===e.v?' on':'')+'" data-fn="setSE" data-val="'+e.v+'">'+e.l+'</button>';}).join('')+'</div></div>'
+    +'<div id="scene-results"><div class="rc">'+items.length+' scene'+(items.length!==1?'s':'')+' found</div>'
+    +items.map(sceneCard).join('')+'</div>';
 }
 
-function go(p){page=p;render();}
+
+
+function getMonoItems(){
+  var items=[];
+  PLAYS.forEach(function(p){
+    (p.monos||[]).forEach(function(m){
+      var matchQ=!monoQ||(m.ch&&m.ch.toLowerCase().indexOf(monoQ.toLowerCase())>=0)||(m.d&&m.d.toLowerCase().indexOf(monoQ.toLowerCase())>=0)||p.title.toLowerCase().indexOf(monoQ.toLowerCase())>=0||p.author.toLowerCase().indexOf(monoQ.toLowerCase())>=0||(p.themes||[]).join(' ').toLowerCase().indexOf(monoQ.toLowerCase())>=0;
+      var matchG=monoGender==='All'||m.g===monoGender;
+      var matchT=monoType==='All'||m.t===monoType;
+      var matchE=monoEra==='All'||(monoEra==='classical'&&['1600s','1700s','1800s','Ancient'].indexOf(p.era)>=0)||(monoEra==='modern'&&['1900s','1950s','1960s','1970s','1980s'].indexOf(p.era)>=0)||(monoEra==='contemporary'&&['1990s','2000s','2010s','2020s'].indexOf(p.era)>=0);
+      if(matchQ&&matchG&&matchT&&matchE) items.push({p:p,m:m});
+    });
+  });
+  return items;
+}
+
+function monoCard(it){
+  var p=it.p, m=it.m;
+  var pid=String(p.key||p.id);
+  var bq=encodeURIComponent((p.title||'')+' '+(p.author||''));
+  return '<div class="mc" data-play="'+pid+'">'
+    +'<div class="mc-top">'+gdot(m.g)+'<span class="mc-char">'+m.ch+'</span>'
+    +'<span class="mc-play">in <strong>'+p.title+'</strong></span>'
+    +'<span class="mc-badge">'+m.t+'</span></div>'
+    +'<div class="mc-meta">'+(m.g==='f'?'Female':m.g==='m'?'Male':'Non-binary')+' &middot; '+p.author+(p.year?' &middot; '+p.year:'')+(p.era?' &middot; '+p.era:'')+'</div>'
+    +'<p class="mc-desc">'+m.d+'</p>'
+    +(m.ex?'<div class="ex-box"><div class="ex-lbl">Sample text</div><p class="ex-txt">'+m.ex+'</p><p class="ex-src">'+m.exsrc+'</p></div>':'')
+    +'<div class="get-script"><span style="font-size:10px;color:#a09d97">Get the script:</span>'
+    +'<a class="sl" href="https://www.concordtheatricals.com/search#q='+bq+'" target="_blank">Concord</a>'
+    +'<a class="sl" href="https://www.dramatists.com" target="_blank">DPS</a>'
+    +'<a class="sl" href="https://www.worldcat.org/search?q='+bq+'&fq=dt:bks" target="_blank">Library</a>'
+    +'</div></div>';
+}
+
+function getSceneItems(){
+  var items=[];
+  PLAYS.forEach(function(p){
+    (p.scenes||[]).forEach(function(s){
+      var fs=s.ch.filter(function(c){return c.g==='f';}).length;
+      var ms=s.ch.filter(function(c){return c.g==='m';}).length;
+      var mix='Mixed/3+';
+      if(s.ch.length===2){if(fs===2)mix='F/F';else if(ms===2)mix='M/M';else if(fs===1&&ms===1)mix='M/F';}
+      var matchQ=!sceneQ||(s.d&&s.d.toLowerCase().indexOf(sceneQ.toLowerCase())>=0)||p.title.toLowerCase().indexOf(sceneQ.toLowerCase())>=0||p.author.toLowerCase().indexOf(sceneQ.toLowerCase())>=0||s.ch.some(function(c){return c.n&&c.n.toLowerCase().indexOf(sceneQ.toLowerCase())>=0;})||(p.themes||[]).join(' ').toLowerCase().indexOf(sceneQ.toLowerCase())>=0;
+      var matchG=sceneGender==='All'||sceneGender===mix;
+      var matchE=sceneEra==='All'||(sceneEra==='classical'&&['1600s','1700s','1800s','Ancient'].indexOf(p.era)>=0)||(sceneEra==='modern'&&['1900s','1950s','1960s','1970s','1980s'].indexOf(p.era)>=0)||(sceneEra==='contemporary'&&['1990s','2000s','2010s','2020s'].indexOf(p.era)>=0);
+      if(matchQ&&matchG&&matchE) items.push({p:p,s:s,mix:mix});
+    });
+  });
+  return items;
+}
+
+function sceneCard(it){
+  var p=it.p, s=it.s;
+  var pid=String(p.key||p.id);
+  var bq=encodeURIComponent((p.title||'')+' '+(p.author||''));
+  return '<div class="mc" data-play="'+pid+'">'
+    +'<div class="mc-top">'
+    +s.ch.map(function(c){return gdot(c.g)+'<span class="mc-char">'+c.n+'</span>';}).join('<span style="color:#a09d97;margin:0 2px">&middot;</span>')
+    +'<span class="mc-badge">'+s.t+'</span>'
+    +'<span class="mc-badge">'+it.mix+'</span></div>'
+    +'<div class="mc-meta">from <strong>'+p.title+'</strong> &middot; '+p.author+(p.era?' &middot; '+p.era:'')+'</div>'
+    +'<p class="mc-desc">'+s.d+'</p>'
+    +'<div class="get-script"><span style="font-size:10px;color:#a09d97">Get the script:</span>'
+    +'<a class="sl" href="https://www.concordtheatricals.com/search#q='+bq+'" target="_blank">Concord</a>'
+    +'<a class="sl" href="https://www.dramatists.com" target="_blank">DPS</a>'
+    +'<a class="sl" href="https://www.worldcat.org/search?q='+bq+'&fq=dt:bks" target="_blank">Library</a>'
+    +'</div></div>';
+}
+
+function countMonos(){var n=0;PLAYS.forEach(function(p){n+=(p.monos||[]).length;});return n;}
+function countScenes(){var n=0;PLAYS.forEach(function(p){n+=(p.scenes||[]).length;});return n;}
+
+// Filter setters
 function setST(t){stab=t;render();}
-function setMG(g){mg=g;render();}
-function setMT(t){mt=t;render();}
-function setSG(g){sg=g;render();}
-function setGF(v){gf=v;render();}
-function setEF(v){ef=v;render();}
+function setPG(v){playGenre=v;render();}
+function setPE(v){playEra=v;render();}
+function setMQ(v){monoQ=v;updateMonoResults();}
+function setMG(v){monoGender=v;updateMonoResults();}
+function setMT(v){monoType=v;updateMonoResults();}
+function setME(v){monoEra=v;updateMonoResults();}
+function setSQ(v){sceneQ=v;updateSceneResults();}
+function setSG(v){sceneGender=v;updateSceneResults();}
+function setSE(v){sceneEra=v;updateSceneResults();}
 
+function updateMonoResults(){
+  var el=document.getElementById('mono-results');
+  if(!el){render();return;}
+  var items=getMonoItems();
+  el.innerHTML='<div class="rc">'+items.length+' monologue'+(items.length!==1?'s':'')+' found</div>'+items.map(monoCard).join('');
+  // restore focus
+  var inp=document.getElementById('mono-search-input');
+  if(inp){var v=inp.value;inp.focus();inp.setSelectionRange(v.length,v.length);}
+}
+
+function updateSceneResults(){
+  var el=document.getElementById('scene-results');
+  if(!el){render();return;}
+  var items=getSceneItems();
+  el.innerHTML='<div class="rc">'+items.length+' scene'+(items.length!==1?'s':'')+' found</div>'+items.map(sceneCard).join('');
+  var inp=document.getElementById('scene-search-input');
+  if(inp){var v=inp.value;inp.focus();inp.setSelectionRange(v.length,v.length);}
+}
+
+// Global search bar
 var sd;
-function onSrch(v){q=v;if(v&&page!=='search')page='search';clearTimeout(sd);sd=setTimeout(render,200);}
-
-function tog(id,val){
-  if(shelf[id]===val){
-    delete shelf[id];
-    apiSave('/api/shelf/' + DEVICE_ID + '/' + encodeURIComponent(id), 'DELETE', {});
+function onSrch(v){
+  playQ=v;monoQ=v;sceneQ=v;
+  if(v.length>2){
+    if(page==='discover') go('search');
+    olLoading=true;render();
+    clearTimeout(sd);
+    sd=setTimeout(function(){doOLSearch(v);},400);
   } else {
-    shelf[id]=val;
-    apiSave('/api/shelf/' + DEVICE_ID + '/' + encodeURIComponent(id), 'PUT', {status:val});
+    olResults=[];olLoading=false;
+    render();
   }
+}
+
+function doOLSearch(q){
+  fetch('https://openlibrary.org/search.json?q='+encodeURIComponent(q)+'&subject=drama&fields=key,title,author_name,first_publish_year,cover_i&limit=20')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      olResults=(data.docs||[]).map(function(doc){
+        for(var i=0;i<PLAYS.length;i++){if(PLAYS[i].key===doc.key)return PLAYS[i];}
+        return {id:doc.key,key:doc.key,title:doc.title||'Unknown',author:(doc.author_name||['Unknown'])[0],year:doc.first_publish_year||null,genre:'Drama',color:hc(doc.title||''),cov:doc.cover_i||null,themes:[],desc:'',rids:[],rwhy:[],monos:[],scenes:[]};
+      });
+      olLoading=false;render();
+    })
+    .catch(function(){olLoading=false;render();});
+}
+
+// Shelf/rating actions
+function tog(id,val){
+  id=String(id);
+  if(shelf[id]===val){delete shelf[id];apiSave('/api/shelf/'+DEVICE_ID+'/'+encodeURIComponent(id),'DELETE',{});}
+  else{shelf[id]=val;apiSave('/api/shelf/'+DEVICE_ID+'/'+encodeURIComponent(id),'PUT',{status:val});}
   var L={read:'Added to Read',reading:'Added to Reading',want:'Added to Want to read'};
   showT(shelf[id]?L[val]:'Removed from shelf');
   render();
   if(did===id)odp(id);
 }
 
-function setR(id,val){ratings[id]=val;apiSave('/api/ratings/'+DEVICE_ID+'/'+encodeURIComponent(id),'PUT',{rating:val});showT('Rated '+val+'/5');render();if(did===id)odp(id);}
-function saveN(id){var ta=document.getElementById('nta');if(ta){notes[id]=ta.value;apiSave('/api/notes/'+DEVICE_ID+'/'+encodeURIComponent(id),'PUT',{note:ta.value});}showT('Note saved');}
+function setR(id,val){
+  id=String(id);ratings[id]=val;
+  apiSave('/api/ratings/'+DEVICE_ID+'/'+encodeURIComponent(id),'PUT',{rating:val});
+  showT('Rated '+val+'/5');render();if(did===id)odp(id);
+}
 
+function saveN(id){
+  id=String(id);
+  var ta=document.getElementById('nta');
+  if(ta){notes[id]=ta.value;apiSave('/api/notes/'+DEVICE_ID+'/'+encodeURIComponent(id),'PUT',{note:ta.value});}
+  showT('Note saved');
+}
+
+// Detail panel
 function odp(id){
+  id=String(id);
   var p=null;
-  for(var i=0;i<PLAYS.length;i++)if(PLAYS[i].id===id){p=PLAYS[i];break;}
+  for(var i=0;i<PLAYS.length;i++){if(String(PLAYS[i].key||PLAYS[i].id)===id){p=PLAYS[i];break;}}
+  if(!p){for(var i=0;i<olResults.length;i++){if(String(olResults[i].key||olResults[i].id)===id){p=olResults[i];break;}}}
   if(!p)return;
   did=id;
   var r=ratings[id]||0,s=shelf[id]||null,note=notes[id]||'';
-  var bq=encodeURIComponent(p.title+' '+p.author);
-  var recs=[];
-  (p.rids||[]).forEach(function(rid,i){for(var j=0;j<PLAYS.length;j++)if(PLAYS[j].id===rid){recs.push({p:PLAYS[j],why:(p.rwhy||[])[i]});break;}});
-  function sc(val){var c={read:'ar',reading:'ag',want:'aw'};return s===val?c[val]:'';}
-  var stars='';for(var i=1;i<=5;i++)stars+='<span class="rst'+(i<=r?' on':'')+'" onclick="setR('+id+','+i+')" onmouseover="hov('+i+')" onmouseout="uhov('+r+')">&#9733;</span>';
-  var h='<div class="dph"><span style="font-size:12px;font-weight:500">'+p.title+'</span>'
+  var bq=encodeURIComponent((p.title||'')+' '+(p.author||''));
+  var recs=(p.rids||[]).map(function(rid,i){
+    for(var j=0;j<PLAYS.length;j++){if(String(PLAYS[j].key||PLAYS[j].id)===String(rid)){return{p:PLAYS[j],why:(p.rwhy||[])[i]||'Similar play'};}}
+    return null;
+  }).filter(Boolean);
+  function sc(v){return s===v?' '+(v==='read'?'ar':v==='reading'?'ag':'aw'):'';}
+  var stars='';for(var i=1;i<=5;i++)stars+='<span class="rst'+(i<=r?' on':'')+'" onclick="setR(\''+id+'\','+i+')" onmouseover="hov('+i+')" onmouseout="uhov('+r+')">&#9733;</span>';
+  var h='<div class="dph"><span class="dph-title">'+p.title+'</span>'
     +'<button onclick="cdp()" style="width:26px;height:26px;border:1px solid #e4e1da;border-radius:6px;background:#fff;cursor:pointer;font-family:inherit">&#10005;</button></div>'
-    +'<div class="dpb">'+cov(p,88,124)
-    +'<div style="font-size:17px;font-weight:500;margin:10px 0 2px">'+p.title+'</div>'
-    +'<div style="font-size:12px;color:#a09d97;margin-bottom:9px">'+p.author+(p.year?' &middot; '+p.year:'')+'</div>'
-    +'<div style="display:flex;flex-wrap:wrap;gap:3px;margin-bottom:10px">'
-    +'<span class="cgenre">'+p.genre+'</span>'
-    +(p.themes||[]).map(function(t){return '<span class="cgenre">'+t+'</span>';}).join('')+'</div>'
-    +'<p style="font-size:12px;color:#6b6860;line-height:1.7;margin-bottom:12px">'+p.desc+'</p>'
-    +'<div class="sub">My rating</div>'
+    +'<div class="dpb">'
+    +cov(p,88,124)
+    +'<div class="dp-title">'+p.title+'</div>'
+    +'<div class="dp-auth">'+p.author+(p.year?' &middot; '+p.year:'')+'</div>'
+    +'<div class="dp-tags"><span class="cgenre">'+p.genre+'</span>'+(p.era?'<span class="cgenre">'+p.era+'</span>':'')+(p.cast?'<span class="cgenre">Cast: '+p.cast+'</span>':'')+(p.themes||[]).map(function(t){return '<span class="cgenre">'+t+'</span>';}).join('')+'</div>'
+    +(p.desc?'<p class="dp-desc">'+p.desc+'</p>':'')
+    +'<div class="dp-sub">My rating</div>'
     +'<div id="rr" style="display:flex;gap:3px;align-items:center;margin-bottom:3px">'+stars+(r?'<span style="font-size:11px;color:#a09d97;margin-left:4px">'+r+'/5</span>':'')+'</div>'
-    +'<div class="sub">Add to shelf</div>'
+    +'<div class="dp-sub">Add to shelf</div>'
     +'<div class="srow">'
-    +'<button class="sopt '+sc('read')+'" onclick="tog('+id+',\'read\')">&#10003;<br>Read</button>'
-    +'<button class="sopt '+sc('reading')+'" onclick="tog('+id+',\'reading\')">&#128218;<br>Reading</button>'
-    +'<button class="sopt '+sc('want')+'" onclick="tog('+id+',\'want\')">&#9829;<br>Want to read</button>'
+    +'<button class="sopt'+sc('read')+'" onclick="tog(\''+id+'\',\'read\')">&#10003;<br>Read</button>'
+    +'<button class="sopt'+sc('reading')+'" onclick="tog(\''+id+'\',\'reading\')">&#128218;<br>Reading</button>'
+    +'<button class="sopt'+sc('want')+'" onclick="tog(\''+id+'\',\'want\')">&#9829;<br>Want to read</button>'
     +'</div>'
-    +'<div class="sub">Get the script</div>'
-    +'<div style="margin-bottom:4px">'
+    +'<div class="dp-sub">Get the script</div>'
+    +'<div class="get-script">'
     +'<a class="sl" href="https://www.concordtheatricals.com/search#q='+bq+'" target="_blank">Concord Theatricals</a>'
     +'<a class="sl" href="https://www.dramatists.com" target="_blank">Dramatists Play Service</a>'
     +'<a class="sl" href="https://www.worldcat.org/search?q='+bq+'&fq=dt:bks" target="_blank">WorldCat library</a>'
-    +'</div>'
-    +'<div class="sub">My notes <span style="font-size:9px;font-weight:400;text-transform:none;letter-spacing:0">(private)</span></div>'
+    +'</div>';
+  if(p.desc===''){h+='<div style="margin-top:12px;padding:10px;background:#f7f5f0;border-radius:7px;font-size:11px;color:#6b6860">This play was found via Open Library search. Full monologue and scene data is available for our '+PLAYS.length+' curated plays.</div>';}
+  +'<div class="dp-sub">My notes <span style="font-size:9px;font-weight:400;text-transform:none;letter-spacing:0">(private)</span></div>'
+  +'<textarea id="nta" placeholder="What struck you?">'+note+'</textarea>'
+  +'<div style="font-size:10px;color:#a09d97;margin-top:3px">&#128274; Only visible to you</div>'
+  +'<button class="savebtn" onclick="saveN(\''+id+'\')">Save note</button>';
+  h+='<div class="dp-sub">My notes <span style="font-size:9px;font-weight:400;text-transform:none;letter-spacing:0">(private)</span></div>'
     +'<textarea id="nta" placeholder="What struck you?">'+note+'</textarea>'
     +'<div style="font-size:10px;color:#a09d97;margin-top:3px">&#128274; Only visible to you</div>'
-    +'<button class="savebtn" onclick="saveN('+id+')">Save note</button>';
+    +'<button class="savebtn" onclick="saveN(\''+id+'\')">Save note</button>';
   if(recs.length){
-    h+='<div class="sub">If you liked this, try...</div>';
+    h+='<div class="dp-sub">If you liked this, try...</div>';
     recs.forEach(function(rc){
-      h+='<div class="ri" onclick="odp('+rc.p.id+')">'+cov(rc.p,24,36)
-        +'<div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">'+rc.p.title+'</div>'
+      var rc2=rc.p,rcid=String(rc2.key||rc2.id);
+      h+='<div class="ri" onclick="odp(\''+rcid+'\')">'+cov(rc2,24,36)
+        +'<div style="flex:1;min-width:0"><div style="font-size:11px;font-weight:500;overflow:hidden;white-space:nowrap;text-overflow:ellipsis">'+rc2.title+'</div>'
         +'<div style="font-size:10px;color:#a09d97">'+rc.why+'</div></div>'
         +'<span style="color:#a09d97">&#8250;</span></div>';
     });
   }
   if((p.monos||[]).length){
-    h+='<div class="sub">Monologues</div>';
-    p.monos.forEach(function(m){h+='<div style="border:1px solid #e4e1da;border-radius:6px;padding:9px;margin-bottom:6px;background:#f7f5f0">'
-      +'<div style="display:flex;align-items:center;gap:5px;margin-bottom:3px">'+gdot(m.g)
-      +'<strong style="font-size:11px">'+m.ch+'</strong>'
-      +'<span class="mbdg" style="margin-left:auto">'+m.t+'</span></div>'
-      +'<p style="font-size:11px;color:#6b6860;line-height:1.5;margin:0">'+m.d+'</p></div>';});
+    h+='<div class="dp-sub">Monologues from this play</div>';
+    p.monos.forEach(function(m){
+      h+='<div class="mini"><div class="mini-top">'+gdot(m.g)+'<strong style="font-size:11px">'+m.ch+'</strong><span style="margin-left:auto;font-size:9px;padding:1px 5px;border-radius:20px;background:#fff;color:#6b6860;border:1px solid #e4e1da">'+m.t+'</span></div><p class="mini-desc">'+m.d+'</p></div>';
+    });
   }
   if((p.scenes||[]).length){
-    h+='<div class="sub">Scenes</div>';
-    p.scenes.forEach(function(sc){h+='<div style="border:1px solid #e4e1da;border-radius:6px;padding:9px;margin-bottom:6px;background:#f7f5f0">'
-      +'<div style="display:flex;align-items:center;gap:5px;margin-bottom:3px">'
-      +sc.ch.map(function(c){return gdot(c.g)+'<span style="font-size:11px;font-weight:500">'+c.n+'</span>';}).join('<span style="color:#a09d97;margin:0 2px">&middot;</span>')
-      +'<span class="mbdg" style="margin-left:auto">'+sc.t+'</span></div>'
-      +'<p style="font-size:11px;color:#6b6860;line-height:1.5;margin:0">'+sc.d+'</p></div>';});
+    h+='<div class="dp-sub">Scenes from this play</div>';
+    p.scenes.forEach(function(sc){
+      h+='<div class="mini"><div class="mini-top">'+sc.ch.map(function(c){return gdot(c.g)+'<span style="font-size:11px;font-weight:500">'+c.n+'</span>';}).join('<span style="color:#a09d97;margin:0 2px">&middot;</span>')+'<span style="margin-left:auto;font-size:9px;padding:1px 5px;border-radius:20px;background:#fff;color:#6b6860;border:1px solid #e4e1da">'+sc.t+'</span></div><p class="mini-desc">'+sc.d+'</p></div>';
+    });
   }
   h+='</div>';
   var dp=document.getElementById('dp');
@@ -443,8 +708,9 @@ function cdp(){did=null;document.getElementById('dp').classList.remove('open');d
 function hov(n){document.querySelectorAll('#rr .rst').forEach(function(el,i){el.style.color=i<n?'#f59e0b':'#e4e1da';});}
 function uhov(r){document.querySelectorAll('#rr .rst').forEach(function(el,i){el.style.color=i<r?'#f59e0b':'#e4e1da';});}
 
+// Theatre card
 function showCard(){
-  var rp=PLAYS.filter(function(p){return shelf[p.id]==='read';}).slice(0,5);
+  var rp=PLAYS.filter(function(p){return shelf[String(p.key||p.id)]==='read';}).slice(0,5);
   var tot={read:0,reading:0,want:0};
   Object.keys(shelf).forEach(function(k){if(tot[shelf[k]]!==undefined)tot[shelf[k]]++;});
   var cm=document.getElementById('cm');
@@ -462,24 +728,47 @@ function showCard(){
     +'</div>';
   if(rp.length){
     h+='<div style="font-size:9px;text-transform:uppercase;letter-spacing:.06em;color:#6b6860;margin-bottom:8px">Plays I have read</div>';
-    rp.forEach(function(p){h+='<div style="display:flex;align-items:center;gap:7px;margin-bottom:6px">'
-      +'<div style="width:22px;height:32px;border-radius:3px;overflow:hidden;background:'+p.color+';flex-shrink:0">'
-      +(p.cov?'<img src="https://covers.openlibrary.org/b/id/'+p.cov+'-S.jpg" style="width:100%;height:100%;object-fit:cover">':'')
-      +'</div><div><div style="font-size:11px;font-weight:500">'+p.title+'</div><div style="font-size:9px;color:#6b6860">'+p.author+'</div></div></div>';});
+    rp.forEach(function(p){h+='<div style="display:flex;align-items:center;gap:7px;margin-bottom:6px">'+cov(p,22,32)+'<div><div style="font-size:11px;font-weight:500">'+p.title+'</div><div style="font-size:9px;color:#6b6860">'+p.author+'</div></div></div>';});
   } else {
     h+='<div style="font-size:11px;color:#6b6860;text-align:center;padding:10px 0">Add plays to your shelf to see them here</div>';
   }
-  h+='<div style="font-size:10px;color:#3a3730;text-align:center;margin-top:12px;padding-top:10px;border-top:1px solid #2a2520">mystagevault.com</div>'
-    +'</div>'
+  h+='<div style="font-size:10px;color:#3a3730;text-align:center;margin-top:12px;padding-top:10px;border-top:1px solid #2a2520">mystagevault.com</div></div>'
     +'<div style="display:flex;gap:8px;justify-content:center;margin-top:14px">'
     +'<button onclick="document.getElementById(\'cm\').classList.remove(\'open\')" style="padding:7px 16px;border:1px solid #e4e1da;border-radius:7px;font-size:12px;background:#fff;cursor:pointer;font-family:inherit">Close</button>'
     +'</div></div>';
-  cm.innerHTML=h;
-  cm.classList.add('open');
+  cm.innerHTML=h;cm.classList.add('open');
 }
 
 var tt;
 function showT(msg){var el=document.getElementById('toast');el.textContent=msg;el.classList.add('show');clearTimeout(tt);tt=setTimeout(function(){el.classList.remove('show');},2400);}
+
+// Event delegation for chip buttons
+document.addEventListener('click', function(e){
+  var btn = e.target.closest('[data-fn]');
+  if(!btn) return;
+  var fn = btn.getAttribute('data-fn');
+  var val = btn.getAttribute('data-val');
+  var fns = {
+    setMG:setMG, setMT:setMT, setME:setME,
+    setSG:setSG, setSE:setSE,
+    setPG:setPG, setPE:setPE
+  };
+  if(fns[fn]) fns[fn](val);
+});
+
+// Event delegation for play cards and mono/scene cards
+document.addEventListener('click', function(e){
+  var card = e.target.closest('[data-play]');
+  if(card && !e.target.closest('.sbtns') && !e.target.closest('[data-fn]')) {
+    odp(card.getAttribute('data-play'));
+  }
+  var sab = e.target.closest('[data-shelf]');
+  if(sab) {
+    e.stopPropagation();
+    var parts = sab.getAttribute('data-shelf').split('|');
+    tog(parts[0], parts[1]);
+  }
+});
 
 loadFromBackend();
 </script>
