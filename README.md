@@ -1,4 +1,4 @@
-<img width="1140" height="581" alt="Screenshot 2026-07-24 10 28 47 PM" src="https://github.com/user-attachments/assets/0fc5c003-517e-4429-b91d-ffa721c1f8c7" />
+<img width="1140" height="581" alt="Screenshot 2026-07-24 10 28 47 PM" src="https://github.com/user-attachments/assets/eddb576e-7d36-4804-87d0-f9329dab6461" />
 # My Stage Vault
 
 A free tool for theatre people. Track plays you have read, discover monologues and scenes, and build your script book.
