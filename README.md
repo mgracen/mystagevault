@@ -3,7 +3,7 @@
 
 A free tool for theatre people. Track plays you have read, discover monologues and scenes, and build your script book.
 
-**Live app:** https://mgracen.github.io/mystagevault/app.html  
+**Live app:** https://mgracen.github.io/mystagevault/
 **Backend:** https://mystagevault-production.up.railway.app  
 **Domain (coming):** mystagevault.com
 
